@@ -14,7 +14,7 @@ async function getInput(_file) {
     const curLine = line.split(" ");
     calcXY(curLine[0], parseInt(curLine[1]));    
   }
-  // console.log(dX, dY, dX * dY);
+  console.log(dX, dY, dX * dY  );
   console.log(dX, aim, dX * aim);
 }
 

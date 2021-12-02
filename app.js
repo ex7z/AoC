@@ -5,6 +5,7 @@ getInput('Day2/inputDay2.txt');
 
 let dX  = 0;
 let dY  = 0;
+let aim = 0;
 
 async function getInput(_file) { 
   const fileStream = fs.createReadStream(_file);
@@ -13,15 +14,19 @@ async function getInput(_file) {
     const curLine = line.split(" ");
     calcXY(curLine[0], parseInt(curLine[1]));    
   }
-  console.log(dX, dY, dX * dY);
+  // console.log(dX, dY, dX * dY);
+  console.log(dX, aim, dX * aim);
 }
 
 function calcXY(_key, _val) {
   switch(_key) { 
-    case "forward": dX += _val; break;
-    case "down"   : dY += _val; break;
-    case "up"     : dY -= _val; break;
-    default       : return;
+    case "forward":
+       dX  +=      _val; 
+       aim += dY * _val;
+       break;
+    case "down": dY += _val; break;
+    case "up"  : dY -= _val; break;
+    default    : return;
   }
 }
 

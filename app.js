@@ -14,7 +14,7 @@ async function getInput(_file) {
     const curLine = line.split(" ");
     calcXY(curLine[0], parseInt(curLine[1]));    
   }
-  console.log(dX, dY, dX * dY  );
+  console.log(dX, dY , dX * dY );
   console.log(dX, aim, dX * aim);
 }
 
@@ -41,8 +41,7 @@ function calcXY(_key, _val) {
 //   console.log(dX, dY, dX * dY)
 // }
 
-// function calculate(_obj) {
-//   const value = parseInt(Object.values(_obj));  
+// function calculate(_obj) {//   const value = parseInt(Object.values(_obj));  
 //   switch(Object.keys(_obj).toString()) { 
 //     case "forward": dX += value; break;
 //     case "down"   : dY += value; break;

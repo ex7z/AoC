@@ -14,7 +14,7 @@ async function getInput(_file) {
     arr.push(bitsArr);
   }
 
-  getGammaEpsilon(arr)
+  getGammaEpsilon(arr);
   getOxygen(arr, 0, true );
   const gen = parseInt(finalRes, 2);
   getOxygen(arr, 0, false);
@@ -25,7 +25,7 @@ async function getInput(_file) {
 
  
 let finalRes = "";
-function getOxygen(_arr, _count, _is_gen = true) {  
+function getOxygen(_arr, _count, _is_gen) {  
   let col = "";  
   
   for (let i = 0; i< _arr.length; i++) {    
@@ -34,13 +34,8 @@ function getOxygen(_arr, _count, _is_gen = true) {
       _arr = _arr.filter(x => {    
         countOf0 = col.split('0').length-1;
         countOf1 = col.split('1').length-1;
-        if (_is_gen) {
-          if (countOf0 == countOf1) return x[_count] != "0";
-          else return (countOf0 < countOf1) ? x[_count] != "0" : x[_count] != "1"
-        } else {
-          if (countOf0 == countOf1) return x[_count] != "1";
-          else return (countOf0 < countOf1) ? x[_count] != "1" : x[_count] != "0"
-        }
+        if (countOf0 == countOf1) return x[_count] != (_is_gen ? "0" : "1");    
+        else return (countOf0 < countOf1) ? x[_count] != (_is_gen ? "0" : "1") : x[_count] != (_is_gen ? "1" : "0")
       });  
     }
 

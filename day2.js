@@ -1,7 +1,7 @@
 const fs       = require('fs'      );
 const readline = require('readline');
 
-getInput('Day2/inputDay2.txt');
+getInput('DaysInput/Day2.txt');
 
 let dX  = 0;
 let dY  = 0;

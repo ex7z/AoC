@@ -22,20 +22,13 @@ async function getInput(_file) {
     })
   }
 
-
   let gamma   = "";
   let epsilon = "";
   Object.keys(obj).map(x => {
     const countOf0 = obj[x].split('0').length-1;
     const countOf1 = obj[x].split('1').length-1;
-    if (countOf0 < countOf1) {
-      gamma   +="1";
-      epsilon +="0";
-    } 
-    if (countOf0 > countOf1) {
-      gamma   +="0";
-      epsilon +="1";
-    }
+    gamma   += countOf0 < countOf1 ? "1" : "0";
+    epsilon += countOf0 < countOf1 ? "0" : "1";
   })
 
   const gammeToBinary   = parseInt(gamma  , 2);

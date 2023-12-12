@@ -1003,54 +1003,54 @@ const dict = ["zero", "one", "two", "three", "four", "five", "six", "seven", "ei
 
 const lines = input.split("\n");
 
-let result = 0;
-let z      = 1;
-
-for (let i=0; i<lines.length; i++) {
-	let num1   = "";
-	let num2   = "";
-	let numStr = "";
+// --------------------------------------------------------------------------------------------------------->
+// Result of the code below is 55362 but real answer is 55358 - cant find the bug
+// --------------------------------------------------------------------------------------------------------->
+// for (let i=0; i<lines.length; i++) {
+// 	let num1   = "";
+// 	let num2   = "";
+// 	let numStr = "";
 	
-	for (let j = 0; j < lines[i].length; j++) {
-		if (!isNumeric(lines[i][j])) numStr += lines[i][j]; 	
-		if ( isNumeric(lines[i][j])) numStr = "";
+// 	for (let j = 0; j < lines[i].length; j++) {
+// 		if (!isNumeric(lines[i][j])) numStr += lines[i][j]; 	
+// 		if ( isNumeric(lines[i][j])) numStr = "";
 
-		for (let k= 0; k < dict.length; k++) {
-			if (typeof numStr == 'string' && numStr.includes(dict[k])) {
-				numStr = dict[k];
-				switch(numStr) {
-					case "one"  : numStr = 1; break;
-					case "two"  : numStr = 2; break;
-					case "three": numStr = 3; break;
-					case "four" : numStr = 4; break;
-					case "five" : numStr = 5; break;
-					case "six"  : numStr = 6; break;
-					case "seven": numStr = 7; break;
-					case "eight": numStr = 8; break;
-					case "nine" : numStr = 9; break;
-				}
-			}
-			if (!num1 && isNumeric(numStr)     ) num1 = numStr;
-			if (!num1 && isNumeric(lines[i][j])) num1 = lines[i][j];
-			if (         isNumeric(lines[i][j])) num2 = lines[i][j];
-			if (         isNumeric(numStr)     ) num2 = numStr;
+// 		for (let k= 0; k < dict.length; k++) {
+// 			if (typeof numStr == 'string' && numStr.includes(dict[k])) {
+// 				numStr = dict[k];
+// 				switch(numStr) {
+// 					case "one"  : numStr = 1; break;
+// 					case "two"  : numStr = 2; break;
+// 					case "three": numStr = 3; break;
+// 					case "four" : numStr = 4; break;
+// 					case "five" : numStr = 5; break;
+// 					case "six"  : numStr = 6; break;
+// 					case "seven": numStr = 7; break;
+// 					case "eight": numStr = 8; break;
+// 					case "nine" : numStr = 9; break;
+// 				}
+// 			}
+// 			if (!num1 && isNumeric(numStr)     ) num1 = numStr;
+// 			if (!num1 && isNumeric(lines[i][j])) num1 = lines[i][j];
+// 			if (         isNumeric(lines[i][j])) num2 = lines[i][j];
+// 			if (         isNumeric(numStr)     ) num2 = numStr;
 			
-		}		
-	}
+// 		}		
+// 	}
 	
-	if (!num2) num2 = num1;		
+// 	if (!num2) num2 = num1;		
 	
-	const nums = Number(num1.toString() + num2.toString());	
-	console.log(z + "-", nums);
-	z++;
-	result += nums;
-}
+// 	const nums = Number(num1.toString() + num2.toString());	
+// 	console.log(z + "-", nums);
+// 	z++;
+// 	result += nums;
+// }
 
-console.log(result);
-
-
-
+// console.log(result);
+// --------------------------------------------------------------------------------------------------------->
+// --------------------------------------------------------------------------------------------------------->
 // part1
+// --------------------------------------------------------------------------------------------------------->
 // <!-- const lines = input.split("\n"); -->
 // <!-- let result = 0; -->
 // <!-- for (let i=0; i<lines.length; i++) { -->

@@ -1004,7 +1004,7 @@ const dict = ["zero", "one", "two", "three", "four", "five", "six", "seven", "ei
 const lines = input.split("\n");
 
 let result = 0;
-let z = 1;
+let z      = 1;
 
 for (let i=0; i<lines.length; i++) {
 	let num1   = "";
@@ -1043,7 +1043,6 @@ for (let i=0; i<lines.length; i++) {
 	const nums = Number(num1.toString() + num2.toString());	
 	console.log(z + "-", nums);
 	z++;
-
 	result += nums;
 }
 
